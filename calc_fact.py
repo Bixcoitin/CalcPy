@@ -49,6 +49,10 @@ def make_buttons(root) -> List[List[tk.Button]]:
             btn = tk.Button(root, text=col_value)
             btn.grid(row=row, column=col_index, sticky='news', padx=5, pady=5)
             btn.config(
-                font=('Helvetica', 15, 'normal')
-                pady=40, width=1
+                font=('Helvetica', 15, 'normal'),
+                pady=40, width=1, background='#f1f2f3', bd=0,
+                cursor='hand2', highlightthickness=0, highlightcolor='#ccc', activebackground='#ccc', highlightbackground='#ccc'
             )
+            button_row.append(btn)
+        buttons.append(button_row)
+    return buttons
