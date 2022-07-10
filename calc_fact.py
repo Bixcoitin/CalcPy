@@ -1,6 +1,7 @@
-#Need to import some liberies
+# Need to import some liberies
 import tkinter as tk
 from typing import List
+
 
 def make_root() -> tk.Tk:
     root = tk.Tk()
@@ -9,6 +10,7 @@ def make_root() -> tk.Tk:
     root.resizable(False, False)
     return root
 
+
 def make_label(root) -> tk.Label:
     label = tk.Label(
         root, text='Sem conta ainda',
@@ -16,6 +18,7 @@ def make_label(root) -> tk.Label:
     )
     label.grid(row=0, column=0, columnspan=5, sticky='news')
     return label
+
 
 def make_display(root) -> tk.Entry:
     display = tk.Entry(root)
@@ -28,10 +31,12 @@ def make_display(root) -> tk.Entry:
     display.bind('<Control-a>', display_control_a)
     return display
 
+
 def display_control_a(event):
     event.widget.select_range(0, 'end')
     event.widget.icursor('end')
     return 'break'
+
 
 def make_buttons(root) -> List[List[tk.Button]]:
     buttons_texts: List[List[str]] = [
